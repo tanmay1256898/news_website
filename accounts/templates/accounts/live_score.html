@@ -1,0 +1,12 @@
+{% extends './home.html' %}
+
+{% block title %}Paper{% endblock title %}
+
+{% block content %}  
+
+<ul>
+    {% for item in entries %}
+        <li>{{ entries.title }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

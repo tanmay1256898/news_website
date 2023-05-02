@@ -1,0 +1,53 @@
+{% extends './home.html' %}
+
+{% block title %}Paper{% endblock title %}
+
+
+{% block content %}  
+<style>
+.card:hover {
+        background-color: black;
+        color: white;        
+    }
+    
+    
+    /* visited link */
+    a:visit.link {
+      color: green;
+    }
+    
+    /* mouse over link */
+    a:hover {
+      color: darkblue;
+    }
+    
+    /* selected link */
+    a:active.link {
+      color: red;
+    }
+
+</style>
+  
+<div class="card-body:center">
+  <div style="margin-right:10px margin-left:20px   " class="sc-OxbzP kBjYiN">
+      {% for categores in zeenews %}
+      <div class="col-md-10 card-body">
+        <div class="card mb-1 shadow" >
+        <dl>
+          <div class="card-body">
+            <h5 class="card-title">{{categores.title}}</h5>
+            <hr/>
+      <p>{{ categores.description }}</p>
+      <p><a   href= {{categores.link }}  target=" _blank"   > {{ categores.link }}
+        </a>
+        </p>
+        </dl>
+      </div>
+            </div>
+          
+        </div>
+      </div>
+    
+      {% endfor %}
+    </div>
+      {% endblock %}

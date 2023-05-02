@@ -1,0 +1,49 @@
+{% extends './home.html' %}
+
+{% block title %}Paper{% endblock title %}
+
+{% block content %}  
+<div class="container text-center">
+    <div class="row justify-content-center ">
+        <div class="col-7">
+            <div class="card">
+              
+                <div class="card-body">
+                {% for i in articles %}
+                <div class="container text-center">
+                    <div class="row justify-content-start">
+                <div class="col-2">
+                    <div class="card rounded shadow-lg m-1" style="width: 37rem;">
+                        <img src="{{ i.urlToImage }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <p class="card-text">{{ i.author }}</p>
+                        <h5 class="card-title">{{ i.title }}</h5>
+                        <p class="card-title">{{ i.source.name }}</p>
+                        <p class="card-text">{{ i.description }}</p>
+                       
+                        <hr>
+                        <small>date: {{ i.publishedAt }}</small>
+                        <a href="{{ i.url }}" target="_blank" class="btn btn-success m-1">See News</a>
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                        <a href="whatsapp://send?text={{i.url}}" data-action="share/whatsapp/share"   style="font-size:25px;color:darkgreen" class="fa fa-whatsapp" ></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{i.url}}" target=" _blank"  data-action="share/facebook/share"   style="font-size:25px;color:darkblue" class="fa fa-facebook" ></a>
+                        
+                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+                        
+
+                  {% endfor %}
+            </div>
+
+        </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+{% endblock %}
